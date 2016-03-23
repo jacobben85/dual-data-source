@@ -16,7 +16,7 @@ import java.util.UUID;
  * Master record
  */
 @Entity
-@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include= JsonTypeInfo.As.PROPERTY, property="@class")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 abstract class StorageObject {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StorageObject.class);

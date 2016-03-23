@@ -28,7 +28,7 @@ public class SearchRecord {
         this.record = record;
     }
 
-    public void SearchRecord(StorageObject record) {
+    public void searchRecord(StorageObject record) {
         type = record.getClass().getSimpleName();
         this.record = record;
     }

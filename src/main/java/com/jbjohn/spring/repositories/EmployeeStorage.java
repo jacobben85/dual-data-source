@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 /**
  */
-public interface EmployeeStorage extends CrudRepository<Employee, String>{
+public interface EmployeeStorage extends CrudRepository<Employee, String> {
     Employee findFirstByDisplayNameIsNull();
 }

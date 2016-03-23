@@ -41,7 +41,7 @@ public class BatchUpdater implements ItemWriter<Employee> {
                 if (record == null) {
                     record = new SearchRecord(employee);
                 } else {
-                    record.SearchRecord(employee);
+                    record.searchRecord(employee);
                 }
                 search.save(record);
             }
