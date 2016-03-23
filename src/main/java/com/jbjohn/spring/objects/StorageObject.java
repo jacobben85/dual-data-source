@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -27,6 +28,10 @@ abstract class StorageObject {
 
     private UUID hash;
 
+    private Date date = new Date();
+
+    private Date updateDate;
+
     public StorageObject() {
         if (hash == null) {
             hash = UUID.randomUUID();
@@ -39,6 +44,21 @@ abstract class StorageObject {
 
     public UUID getHash() {
         return hash;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Date getUpdateDate() {
+        if (updateDate == null) {
+            return date;
+        }
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 
     @Override
