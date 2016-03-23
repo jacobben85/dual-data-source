@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'id: ' + ${employee.id}" />
+<p th:text="'name: ' + ${employee.firstName} + ' ' + ${employee.lastName}" />
+<a href="/employee">Add another employee</a>
+<br/>
+<a href="/employees">All employees</a>
+</body>
+</html>

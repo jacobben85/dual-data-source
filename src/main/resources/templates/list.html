@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Employee List</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    <tr th:each="employee, iterStatus : ${employees}">
+        <td th:text="${employee.id}">1</td>
+        <td th:text="${employee.firstName}">First name</td>
+        <td th:text="${employee.lastName}">Last name</td>
+    </tr>
+</table>
+
+<a href="/rest/employees">See as api</a>
+<br/>
+<a href="/employee">Add new</a>
+</body>
+</html>
