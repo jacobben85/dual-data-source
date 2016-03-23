@@ -20,7 +20,7 @@ public class BatchReader implements ItemReader<Employee> {
     private EmployeeStorage repo;
 
     @Override
-    public Employee read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+    public Employee read() throws Exception {
         if (repo.count() > 0) {
             Employee employee = null;
             try {
