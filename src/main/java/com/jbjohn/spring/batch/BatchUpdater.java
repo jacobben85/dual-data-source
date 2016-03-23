@@ -1,7 +1,7 @@
 package com.jbjohn.spring.batch;
 
 import com.jbjohn.spring.objects.Employee;
-import com.jbjohn.spring.objects.EmployeeRecord;
+import com.jbjohn.spring.objects.SearchRecord;
 import com.jbjohn.spring.repositories.EmployeeSearch;
 import com.jbjohn.spring.repositories.EmployeeStorage;
 import org.slf4j.Logger;
@@ -37,11 +37,11 @@ public class BatchUpdater implements ItemWriter<Employee> {
                 repo.save(employee);
                 LOGGER.info("Updated : " + employee.toString());
 
-                EmployeeRecord record = search.findOne(employee.getId());
+                SearchRecord record = search.findOneByHash(employee.getHash().toString());
                 if (record == null) {
-                    record = new EmployeeRecord(employee);
+                    record = new SearchRecord(employee);
                 } else {
-                    record.EmployeeRecord(employee);
+                    record.SearchRecord(employee);
                 }
                 search.save(record);
             }

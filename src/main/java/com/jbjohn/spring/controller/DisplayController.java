@@ -1,7 +1,7 @@
 package com.jbjohn.spring.controller;
 
 import com.jbjohn.spring.objects.Employee;
-import com.jbjohn.spring.objects.EmployeeRecord;
+import com.jbjohn.spring.objects.SearchRecord;
 import com.jbjohn.spring.repositories.EmployeeSearch;
 import com.jbjohn.spring.repositories.EmployeeStorage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 /**
  * Display controller
  */
+@SuppressWarnings("unused")
 @Controller
 public class DisplayController {
 
@@ -66,12 +67,12 @@ public class DisplayController {
     // listing
     @RequestMapping("/search")
     String employeeSearch(Model model) {
-        Iterable<EmployeeRecord> list = search.findAll();
+        Iterable<SearchRecord> list = search.findAll();
 
-        ArrayList<EmployeeRecord> results = new ArrayList<>();
+        ArrayList<SearchRecord> results = new ArrayList<>();
 
         if (repo.count() > 0) {
-            for (EmployeeRecord employee : list) {
+            for (SearchRecord employee : list) {
                 results.add(employee);
             }
         }

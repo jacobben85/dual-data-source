@@ -1,7 +1,7 @@
 package com.jbjohn.spring.controller;
 
 import com.jbjohn.spring.objects.Employee;
-import com.jbjohn.spring.objects.EmployeeRecord;
+import com.jbjohn.spring.objects.SearchRecord;
 import com.jbjohn.spring.repositories.EmployeeSearch;
 import com.jbjohn.spring.repositories.EmployeeStorage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,14 +53,14 @@ public class RestApiController {
     }
 
     @RequestMapping("/search")
-    public HashMap<String, EmployeeRecord> employeeSearch() {
-        Iterable<EmployeeRecord> list = search.findAll();
+    public HashMap<String, SearchRecord> employeeSearch() {
+        Iterable<SearchRecord> list = search.findAll();
 
-        HashMap<String, EmployeeRecord> employeeList = new HashMap<>();
+        HashMap<String, SearchRecord> employeeList = new HashMap<>();
 
         if (search.count() > 0) {
-            for (EmployeeRecord employee : list) {
-                employeeList.put(employee.getId(), employee);
+            for (SearchRecord employee : list) {
+                employeeList.put(employee.getHash(), employee);
             }
         }
 
