@@ -23,7 +23,7 @@ public class SearchRecord {
     }
 
     public SearchRecord(StorageObject record) {
-        type = record.getClass().getSimpleName();
+        type = record.getClass().getName();
         hash = record.getHash().toString();
         this.record = record;
     }
