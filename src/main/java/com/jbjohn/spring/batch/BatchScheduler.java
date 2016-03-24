@@ -43,7 +43,6 @@ public class BatchScheduler {
         }
     }
 
-    @Scheduled(cron = "${batch.cron.expression}")
     public void batchSynchronizer() {
         try {
             JobParameters param = getDateParam();

@@ -1,4 +1,4 @@
-package com.jbjohn.spring.batch;
+package com.jbjohn.spring.batch.datastore;
 
 import com.jbjohn.spring.objects.Employee;
 import com.jbjohn.spring.objects.SearchRecord;
