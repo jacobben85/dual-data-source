@@ -10,6 +10,7 @@ import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -36,7 +37,7 @@ public class BatchConfig {
     }
 
     @Bean
-    public Job updateEmployee(JobBuilderFactory jobs, Step s1) {
+    public Job updateEmployee(JobBuilderFactory jobs, @Qualifier("update") Step s1) {
         return jobs.get("updateEmployee")
                 .incrementer(new RunIdIncrementer())
                 .flow(s1)
@@ -45,9 +46,9 @@ public class BatchConfig {
     }
 
     @Bean
-    public Step step1(StepBuilderFactory stepBuilderFactory, ItemReader<Employee> reader,
+    public Step update(StepBuilderFactory stepBuilderFactory, ItemReader<Employee> reader,
                       ItemWriter<Employee> writer, ItemProcessor<Employee, Employee> processor) {
-        return stepBuilderFactory.get("step1")
+        return stepBuilderFactory.get("update")
                 .<Employee, Employee>chunk(2)
                 .reader(reader)
                 .processor(processor)
