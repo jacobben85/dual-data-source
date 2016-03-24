@@ -16,6 +16,7 @@ import java.util.UUID;
 /**
  * Master record
  */
+@SuppressWarnings("unused")
 @Entity
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 abstract class StorageObject {

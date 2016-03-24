@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  */
+@SuppressWarnings("unused")
 public class General {
     private static final Logger LOGGER = LoggerFactory.getLogger(General.class);
 

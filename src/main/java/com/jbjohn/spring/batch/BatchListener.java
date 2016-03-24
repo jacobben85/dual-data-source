@@ -8,6 +8,7 @@ import org.springframework.batch.core.listener.JobExecutionListenerSupport;
 
 /**
  */
+@SuppressWarnings("unused")
 public class BatchListener extends JobExecutionListenerSupport {
     private static final Logger LOGGER = LoggerFactory.getLogger(BatchListener.class);
 

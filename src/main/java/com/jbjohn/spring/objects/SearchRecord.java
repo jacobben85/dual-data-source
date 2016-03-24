@@ -9,6 +9,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  */
+@SuppressWarnings("unused")
 @Document(indexName = "search", type = "record")
 public class SearchRecord {
 
